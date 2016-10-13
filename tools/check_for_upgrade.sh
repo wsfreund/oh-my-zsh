@@ -38,7 +38,7 @@ if mkdir "$ZSH/log/update.lock" 2>/dev/null; then
     fi
 
     epoch_diff=$(($(_current_epoch) - $LAST_EPOCH))
-    #if [ $epoch_diff -gt $epoch_target ]; then
+    if [ $epoch_diff -gt $epoch_target ]; then
       if [ "$DISABLE_UPDATE_PROMPT" = "true" ]; then
         _upgrade_zsh
       else
@@ -50,7 +50,7 @@ if mkdir "$ZSH/log/update.lock" 2>/dev/null; then
           _update_zsh_update
         fi
       fi
-    #fi
+    fi
   else
     # create the zsh file
     _update_zsh_update
