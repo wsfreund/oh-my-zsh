@@ -23,7 +23,7 @@ fi
 printf "${BLUE}%s${NORMAL}\n" "Updating Oh My Zsh"
 cd "$ZSH"
 git remote show | grep "upstream" > /dev/null || git remote add upstream "https://github.com/robbyrussell/oh-my-zsh.git"
-if git pull --rebase --stat origin upstream
+if git pull --rebase --stat upstream master
 then
   printf '%s' "$GREEN"
   printf '%s\n' '         __                                     __   '
